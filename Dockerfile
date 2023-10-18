@@ -11,7 +11,7 @@ EXPOSE 3000
 
 # Install the application dependencies and build
 RUN npm install
-RUN npm start build
+RUN npm run build
 
 # Define the entry point for the container
 CMD ["npm", "start"]
