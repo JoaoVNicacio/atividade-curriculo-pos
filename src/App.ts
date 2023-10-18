@@ -4,6 +4,9 @@ import cors from 'cors';
 import HealthController from './controllers/HealthController';
 import { DataSource } from 'typeorm';
 import ResumeController from './controllers/ResumeController';
+import Experience from './entities/Experience';
+import Language from './entities/Language';
+import Resume from './entities/Resume';
 
 const app = express()
 dotenv.config();
@@ -13,7 +16,7 @@ export const dataSource = new DataSource({
   url: process.env.DATABASE_URL,
   synchronize: true,
   logging: true,
-  entities: ["src/entities/**/*.ts"],
+  entities: [Resume ,Experience, Language],
   migrations: ["src/migration/**/*.ts"],
   subscribers: ["src/subscriber/**/*.ts"],
 });
