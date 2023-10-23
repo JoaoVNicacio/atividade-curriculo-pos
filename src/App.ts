@@ -7,9 +7,13 @@ import ResumeController from './controllers/ResumeController';
 import Experience from './entities/Experience';
 import Language from './entities/Language';
 import Resume from './entities/Resume';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from './FirebaseConfig';
 
 const app = express()
 dotenv.config();
+
+export const firebaseApp = initializeApp(firebaseConfig)
 
 export const dataSource = new DataSource({
   type: 'postgres',
